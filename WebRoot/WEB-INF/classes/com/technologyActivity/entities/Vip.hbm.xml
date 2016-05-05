@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 10:13:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.technologyActivity.entities.Vip" table="TB_VIP">
+        <id name="vip_id" type="long">
+            <column name="VIP_ID" />
+            <generator class="native" />
+        </id>
+        <property name="vip_type" type="java.lang.String">
+            <column name="VIP_TYPE" />
+        </property>
+        <property name="vip_price" type="double">
+            <column name="VIP_PRICE" />
+        </property>
+        <property name="vip_unit" type="java.lang.String">
+            <column name="VIP_UNIT" />
+        </property>
+    </class>
+</hibernate-mapping>

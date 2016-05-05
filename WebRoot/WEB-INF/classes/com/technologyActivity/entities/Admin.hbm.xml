@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 10:13:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.technologyActivity.entities">
+    <class name="Admin" table="TB_ADMIN">
+        <id name="admin_id" type="long">
+            <column name="ADMIN_ID" />
+            <generator class="native" />
+        </id>
+        <property name="admin_untime" type="java.util.Date">
+            <column name="ADMIN_UNTIME" />
+        </property>
+        <property name="admin_inviteNumber" type="java.lang.String">
+            <column name="ADMIN_INVITENUMBER" />
+        </property>
+        <property name="admin_inviteNumberee" type="java.lang.String">
+            <column name="ADMIN_INVITENUMBEREE" />
+        </property>
+        <property name="admin_email" type="java.lang.String">
+            <column name="ADMIN_EMAIL" />
+        </property>
+           <property name="admin_password" type="java.lang.String">
+            <column name="ADMIN_PASSWORD" />
+        </property>
+        <property name="admin_phone" type="java.lang.String">
+            <column name="ADMIN_PHONE" />
+        </property>
+        <set name="users" table="TB_USER" inverse="false" lazy="true">
+            <key>
+                <column name="ADMIN_ID" />
+            </key>
+            <one-to-many class="User" />
+        </set>
+    </class>
+</hibernate-mapping>

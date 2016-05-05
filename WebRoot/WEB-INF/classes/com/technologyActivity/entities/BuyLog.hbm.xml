@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 10:13:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.technologyActivity.entities">
+    <class name="BuyLog" table="TB_BUYLOG">
+        <id name="buy_id" type="long">
+            <column name="BUY_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="user" class="User"  >
+            <column name="USER_ID" />
+        </many-to-one>
+        <many-to-one name="ser" class="Service">
+            <column name="SER_ID" />
+        </many-to-one>
+        <property name="buy_count" type="long">
+            <column name="BUY_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

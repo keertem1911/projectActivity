@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+		
+	<bean id="projectDao" class="com.technologyActivity.dao.ProjectDao" > 
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	 <property name="projectIdxDao" ref="projectIdxDao"></property>
+	</bean>
+	<bean id="projectService" class="com.technologyActivity.service.ProjectService">
+		<property name="projectDao" ref="projectDao" ></property>
+		
+	</bean>
+	<bean id="projectAction" class="com.technologyActivity.action.ProjectAction">
+		<property name="projectService" ref="projectService"></property>
+	</bean>
+	
+	<bean id="projectIdxDao" class="com.technologyActivity.dao.ProjectIdxDao" > 
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="projectIdxService" class="com.technologyActivity.service.ProjectIdxService">
+		<property name="projectIdxDao" ref="projectIdxDao" ></property>
+	</bean>
+	<bean id="projectIdxAction" class="com.technologyActivity.action.ProjectIdxAction">
+		<property name="projectIdxService" ref="projectIdxService"></property>
+	</bean>
+	
+	<bean id="projectYearDao" class="com.technologyActivity.dao.ProjectYearDao" > 
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="projectYearService" class="com.technologyActivity.service.ProjectYearService">
+		<property name="projectYearDao" ref="projectYearDao" ></property>
+	</bean>
+	<bean id="projectYearAction" class="com.technologyActivity.action.ProjectYearAction">
+		<property name="projectYearService" ref="projectYearService"></property>
+	</bean>
+	
+	<!-- 管理员 -->
+	
+	<bean id="adminDao" class="com.technologyActivity.dao.AdminDao" > 
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="adminService" class="com.technologyActivity.service.AdminService">
+		<property name="adminDao" ref="adminDao" ></property>
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="adminAction" class="com.technologyActivity.action.AdminAction">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+	
+	<!-- 用户 -->
+	
+	<bean id="userDao" class="com.technologyActivity.dao.UserDao" > 
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService" class="com.technologyActivity.service.UserService">
+		<property name="userDao" ref="userDao" ></property>
+	</bean>
+	<bean id="userAction" class="com.technologyActivity.action.UserAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<!-- 购买清单 -->	
+	
+	<bean id="buyLogDao" class="com.technologyActivity.dao.BuyLogDao" > 
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="buyLogService" class="com.technologyActivity.service.BuyLogService">
+		<property name="buyLogDao" ref="buyLogDao" ></property>
+	</bean>
+	<bean id="buyLogAction" class="com.technologyActivity.action.BuyLogAction">
+		<property name="buyLogService" ref="buyLogService"></property>
+	</bean>
+	
+	<!-- 公共请求ACTION  -->
+	<bean id="commentAction" class="com.technologyActivity.action.commentAction"></bean>	
+</beans>

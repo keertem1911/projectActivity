@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-30 20:00:33 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.technologyActivity.entities">
+    <class name="technoloYear" table="TECHNOLOYEAR">
+       	<id name="id" type="int">
+       		<column name="ID"></column>
+       		<generator class="native"></generator>
+       	</id>
+        <property name="idx_id" type="int">
+            <column name="IDX_ID" />
+        </property>
+        <property name="idx_year" type="java.lang.String">
+            <column name="IDX_YEAR" />
+        </property>
+        <property name="idx_value" type="java.lang.String">
+            <column name="IDX_VALUE" />
+        </property>
+        <many-to-one name="technoloyActivity" class="technoloyActivity"  cascade="save-update">
+        	 <column name="idx_id"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

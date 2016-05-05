@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 10:13:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.technologyActivity.entities">
+    <class name="User" table="TB_USER">
+        <id name="user_id" type="long">
+            <column name="USER_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="vip" class="Vip"  >
+            <column name="VIP_ID" />
+        </many-to-one>
+        <property name="user_balance" type="double">
+            <column name="USER_BALANCE" />
+        </property>
+        <property name="user_untime" type="java.util.Date">
+            <column name="USER_UNTIME" />
+        </property>
+        <property name="user_username" type="java.lang.String">
+            <column name="USER_USERNAME" />
+        </property>
+        <property name="user_password" type="java.lang.String">
+            <column name="USER_PASSWORD" />
+        </property>
+        <property name="user_email" type="java.lang.String">
+            <column name="USER_EMAIL" />
+        </property>
+        <property name="user_phone" type="java.lang.String">
+            <column name="USER_PHONE" />
+        </property>
+        <many-to-one name="admin" class="Admin"  >
+            <column name="ADMIN_ID" />
+        </many-to-one>
+        <property name="user_detail" type="java.lang.String">
+            <column name="USER_DETAIL" />
+        </property>
+        <property name="user_picture" type="java.lang.String">
+            <column name="USER_PICTURE" />
+        </property>
+        <set name="buyLogs" table="tb_BUYLOG" inverse="false" >
+            <key>
+                <column name="USER_ID" />
+            </key>
+            <one-to-many class="BuyLog" />
+        </set>
+    </class>
+</hibernate-mapping>

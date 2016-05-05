@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-11 20:49:33 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.technologyActivity.entities">
+    <class name="technoloMonth" table="TECHNOLOMONTH">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="idx_id" type="int">
+            <column name="IDX_ID" />
+        </property>
+        <property name="idx_month" type="java.lang.String">
+            <column name="IDX_MONTH" />
+        </property>
+        <property name="idx_value" type="java.lang.String">
+            <column name="IDX_VALUE" />
+        </property>
+        <many-to-one name="technoloyActivity" class="technoloyActivity" fetch="join">
+            <column name="idx_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

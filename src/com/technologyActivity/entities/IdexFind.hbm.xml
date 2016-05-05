@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-11 20:48:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.technologyActivity.entities.IdexFind" table="IDEXFIND">
+        <id name="idx_1" type="java.lang.String">
+            <column name="IDX_1" />
+            <generator class="assigned" />
+        </id>
+        <property name="idx_2" type="java.lang.String">
+            <column name="IDX_2" />
+        </property>
+        <property name="idx_3" type="java.lang.String">
+            <column name="IDX_3" />
+        </property>
+        <property name="idx_4" type="java.lang.String">
+            <column name="IDX_4" />
+        </property>
+        <property name="idx_5" type="java.lang.String">
+            <column name="IDX_5" />
+        </property>
+        <property name="idx_6" type="java.lang.String">
+            <column name="IDX_6" />
+        </property>
+        <property name="idx_7" type="java.lang.String">
+            <column name="IDX_7" />
+        </property>
+        <property name="idx_source" type="java.lang.String">
+            <column name="IDX_SOURCE" />
+        </property>
+    </class>
+</hibernate-mapping>
